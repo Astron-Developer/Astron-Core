@@ -1,0 +1,8 @@
+/usr/bin/astron-cli		--	gen_context(system_u:object_r:astron_exec_t,s0)
+/usr/sbin/astrond		--	gen_context(system_u:object_r:astron_exec_t,s0)
+/usr/lib(64)?/astron/astrond		--	gen_context(system_u:object_r:astron_exec_t,s0)
+
+/etc/astron(/.*)?		gen_context(system_u:object_r:astron_conf_t,s0)
+/var/lib/astron(/.*)?		gen_context(system_u:object_r:astron_var_lib_t,s0)
+
+(/var)?/run/astrond(/.*)?   gen_context(system_u:object_r:astron_var_run_t,s0)

@@ -1,0 +1,6 @@
+usr/local/bin/astron-qt usr/bin
+share/pixmaps/astron32.xpm usr/share/pixmaps
+share/pixmaps/astron16.xpm usr/share/pixmaps
+share/pixmaps/astron128.png usr/share/pixmaps
+debian/astron-qt.desktop usr/share/applications
+debian/astron-qt.protocol usr/share/kde4/services/

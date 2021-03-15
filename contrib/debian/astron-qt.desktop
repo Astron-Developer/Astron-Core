@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Astron Core
+Comment=Astron P2P Cryptocurrency
+Comment[fr]=Astron, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Astron, eşten eşe kriptografik sanal para birimi
+Exec=astron-qt %u
+Terminal=false
+Type=Application
+Icon=astron128
+MimeType=x-scheme-handler/astron;
+Categories=Office;Finance;
+StartupWMClass=Astron-qt
