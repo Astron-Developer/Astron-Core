@@ -30,9 +30,9 @@ Official Astron Core Cryptocurrency Repository.
 - **Algoritimo:** Quark <br>
 - **Block type:** PoS/PoW/MN <br>
 - **Reward	(PoW):** 2% - end time block: 45.002 <br>
-- **Reward (PoS):** 5% - After Up <br>
+- **Reward (PoS):** 5% - reward up hailvings<br>
 - **Reward Superblock:** 3% <br>
-- **Reward Masternode:** 98% - After Down<br>
+- **Reward Masternode:** 98% - reward down hailvings<br>
 - **Masternode amount:** 25000 DEV's <br>
 - **Confirmações de Masternode:** 21 blocos <br>
 - **Maturidade de Masternode:** 16 <br>
