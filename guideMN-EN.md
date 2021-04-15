@@ -95,7 +95,7 @@ Example output<br>
 
 DB5uyEU1G7UdTg8L5HiAZMsDS9vgsKKWfa<br>
 
-**Transfer the required amount of ```30000 DEV``` to the “collateral address” that you created using the command “getaccountaddress "MN1"”.**
+**Transfer the required amount of ```25000 DEV``` to the “collateral address” that you created using the command “getaccountaddress "MN1"”.**
 
 **Wait until the transaction has the ```21 confirmations.```**
 
