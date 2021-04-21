@@ -120,13 +120,13 @@ Click “Open Masternode Configuration File”.<br>
 
 Modify the following line and paste it into notepad.<br>
 ```
-MN1 ip_da_vps:24484 7VatfYVk5fFMTymPDhgSURAESDACJhWpd89WHGoh35d9fbLQPj5 506a242ccbfd2555bcd9cff5f4041752c911f39cb2905acc83ccfe0cf8808df9 1
+MN1 ip_da_vps:27078 7VatfYVk5fFMTymPDhgSURAESDACJhWpd89WHGoh35d9fbLQPj5 506a242ccbfd2555bcd9cff5f4041752c911f39cb2905acc83ccfe0cf8808df9 1
 ```
 ```MN1``` - Alias for your masternode.<br>
 
 ```ip_da_vps``` - External IP address of your VPS.<br>
 
-```24484``` - Replace with P2P port of your coin.<br>
+```27078``` - Replace with P2P port of your coin.<br>
 
 ```7VatfYVk5fFMTymPDhgSURAESDACJhWpd89WHGoh35d9fbLQPj5``` - Masternode private key from the command “createmasternodekey”.<br>
 
@@ -191,7 +191,7 @@ Example output<br>
 {
   "txhash": "506a242ccbfd2555bcd9cff5f4041752c911f39cb2905acc83ccfe0cf8808df9",
   "outputidx": 1,
-  "netaddr": "136.144.171.201:9999",
+  "netaddr": "136.144.171.201:27078",
   "addr": "DB5uyEU1G7UdTg8L5HiAZMsDS9vgsKKWfa",
   "status": 4,
   "message": "Masternode successfully started"
