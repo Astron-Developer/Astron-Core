@@ -109,8 +109,6 @@ private:
     QAction* multisigSignAction;
     QAction* aboutAction;
     QAction* receiveCoinsAction;
-    QAction* governanceAction;
-    QAction* privacyAction;
     QAction* optionsAction;
     QAction* toggleHideAction;
     QAction* encryptWalletAction;
@@ -210,16 +208,12 @@ private slots:
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
-    /** Switch to Governance Page */
-    void gotoGovernancePage();
     /** Switch to Explorer Page */
     void gotoBlockExplorerPage();
     /** Switch to masternode page */
     void gotoMasternodePage();
-    /** Switch to privacy page */
+	/** Switch to receive coins page */
     void gotoReceiveCoinsPage();
-    /** Switch to receive coins page */
-    void gotoPrivacyPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
 

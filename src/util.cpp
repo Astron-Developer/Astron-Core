@@ -499,8 +499,29 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
         // Create empty astron.conf if it does not exist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
         if (configFile != NULL)
-            fclose(configFile);
-        return; // Nothing to read, so just return
+			{
+            std::string strHeader =
+                "# Astron Core Configuration File!\n"
+                "rpcuser=rpc_astron\n"
+                "rpcpassword=astron\n"
+                "rpcallowip=127.0.0.1\n"
+				"rpcport=27077\n"
+				"port=27078\n"
+				"listen=1\n"
+                "server=1\n"
+                "txindex=1\n"
+                "daemon=1\n"
+                "addnode=node1.astron.dev:27078\n"
+                "addnode=node2.astron.dev:27078\n"
+                "addnode=node3.astron.dev:27078\n"
+                "addnode=node4.astron.dev:27078\n"
+				"whitelist=207.180.235.200\n"
+				"whitelist=95.111.240.71\n";
+			fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
+			fclose(configFile);
+			streamConfig.open(GetConfigFile());
+		}
+		//return; // Nothing to read, so just return
     }
 
     set<string> setOptions;

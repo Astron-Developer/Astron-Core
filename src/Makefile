@@ -105,7 +105,7 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
-host_triplet = x86_64-w64-linux-gnu
+host_triplet = x86_64-pc-linux-gnu
 bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5)
 noinst_PROGRAMS =
@@ -134,15 +134,15 @@ am__append_16 = -DLEVELDB_PLATFORM_POSIX
 am__append_18 = leveldb/port/port_posix.cc
 am__append_19 = -DLEVELDB_PLATFORM_POSIX_SSE
 am__append_20 = $(SSE42_CXXFLAGS)
-#am__append_21 = test/test_astron
-#am__append_22 = \
-#  test/accounting_tests.cpp \
-#  wallet/test/wallet_tests.cpp \
-#  test/rpc_wallet_tests.cpp
+am__append_21 = test/test_astron
+am__append_22 = \
+  test/accounting_tests.cpp \
+  wallet/test/wallet_tests.cpp \
+  test/rpc_wallet_tests.cpp
 
-#am__append_23 = $(LIBBITCOIN_WALLET)
-#am__append_24 = $(ZMQ_LIBS)
-#am__append_25 = $(CLEAN_BITCOIN_TEST)
+am__append_23 = $(LIBBITCOIN_WALLET)
+am__append_24 = $(ZMQ_LIBS)
+am__append_25 = $(CLEAN_BITCOIN_TEST)
 am__append_26 = qt/astron-qt
 am__append_27 = qt/libbitcoinqt.a
 #am__append_28 = $(BITCOIN_QT_WINDOWS_CPP)
@@ -156,15 +156,15 @@ am__append_34 = $(CLEAN_QT)
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#am__append_35 = qt/test/test_astron-qt
-#am__append_36 = qt/test/test_astron-qt
-#am__append_37 = qt/test/moc_paymentservertests.cpp
-#am__append_38 = \
-#  qt/test/paymentservertests.cpp
+am__append_35 = qt/test/test_astron-qt
+am__append_36 = qt/test/test_astron-qt
+am__append_37 = qt/test/moc_paymentservertests.cpp
+am__append_38 = \
+  qt/test/paymentservertests.cpp
 
-#am__append_39 = $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
-#am__append_40 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
-#am__append_41 = $(CLEAN_BITCOIN_QT_TEST)
+am__append_39 = $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+am__append_40 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+am__append_41 = $(CLEAN_BITCOIN_QT_TEST)
 subdir = src
 SUBDIRS =
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -886,9 +886,9 @@ libbitcoinconsensus_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 am__EXEEXT_1 = astrond$(EXEEXT)
 am__EXEEXT_2 = astron-cli$(EXEEXT) \
 	astron-tx$(EXEEXT)
-#am__EXEEXT_3 = test/test_astron$(EXEEXT)
+am__EXEEXT_3 = test/test_astron$(EXEEXT)
 am__EXEEXT_4 = qt/astron-qt$(EXEEXT)
-#am__EXEEXT_5 = qt/test/test_astron-qt$(EXEEXT)
+am__EXEEXT_5 = qt/test/test_astron-qt$(EXEEXT)
 PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
 am__astron_cli_SOURCES_DIST = astron-cli.cpp astron-cli-res.rc
 #am__objects_18 = astron-cli-res.$(OBJEXT)
@@ -970,42 +970,42 @@ am__qt_test_test_astron_qt_SOURCES_DIST = qt/test/test_main.cpp \
 	qt/test/uritests.cpp qt/test/uritests.h \
 	qt/test/paymentrequestdata.h qt/test/paymentservertests.h \
 	qt/test/paymentservertests.cpp
-#am__objects_25 = qt/test/qt_test_test_astron_qt-paymentservertests.$(OBJEXT)
-#am_qt_test_test_astron_qt_OBJECTS = qt/test/qt_test_test_astron_qt-test_main.$(OBJEXT) \
-#	qt/test/qt_test_test_astron_qt-uritests.$(OBJEXT) \
-#	$(am__objects_3) $(am__objects_25)
-#am__objects_26 = qt/test/qt_test_test_astron_qt-moc_paymentservertests.$(OBJEXT)
-#am__objects_27 = qt/test/qt_test_test_astron_qt-moc_uritests.$(OBJEXT) \
-#	$(am__objects_26)
-#nodist_qt_test_test_astron_qt_OBJECTS =  \
-#	$(am__objects_27)
+am__objects_25 = qt/test/qt_test_test_astron_qt-paymentservertests.$(OBJEXT)
+am_qt_test_test_astron_qt_OBJECTS = qt/test/qt_test_test_astron_qt-test_main.$(OBJEXT) \
+	qt/test/qt_test_test_astron_qt-uritests.$(OBJEXT) \
+	$(am__objects_3) $(am__objects_25)
+am__objects_26 = qt/test/qt_test_test_astron_qt-moc_paymentservertests.$(OBJEXT)
+am__objects_27 = qt/test/qt_test_test_astron_qt-moc_uritests.$(OBJEXT) \
+	$(am__objects_26)
+nodist_qt_test_test_astron_qt_OBJECTS =  \
+	$(am__objects_27)
 qt_test_test_astron_qt_OBJECTS = $(am_qt_test_test_astron_qt_OBJECTS) \
 	$(nodist_qt_test_test_astron_qt_OBJECTS)
-#am__DEPENDENCIES_6 =  \
-#	$(LIBBITCOIN_ZMQ) \
-#	$(am__DEPENDENCIES_1)
-#qt_test_test_astron_qt_DEPENDENCIES =  \
-#	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
-#	$(am__append_39) $(am__DEPENDENCIES_6) \
-#	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
-#	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
-#	$(am__DEPENDENCIES_2) \
-#	$(LIBBITCOIN_ZEROCOIN) \
-#	$(am__DEPENDENCIES_3) \
-#	$(LIBLEVELDB_SSE42) \
-#	$(am__DEPENDENCIES_4) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) $(LIBSECP256K1) \
-#	$(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1)
+am__DEPENDENCIES_6 =  \
+	$(LIBBITCOIN_ZMQ) \
+	$(am__DEPENDENCIES_1)
+qt_test_test_astron_qt_DEPENDENCIES =  \
+	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
+	$(am__append_39) $(am__DEPENDENCIES_6) \
+	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
+	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+	$(am__DEPENDENCIES_2) \
+	$(LIBBITCOIN_ZEROCOIN) \
+	$(am__DEPENDENCIES_3) \
+	$(LIBLEVELDB_SSE42) \
+	$(am__DEPENDENCIES_4) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(LIBSECP256K1) \
+	$(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
 qt_test_test_astron_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(qt_test_test_astron_qt_CXXFLAGS) $(CXXFLAGS) \
@@ -1044,79 +1044,79 @@ am__test_test_astron_SOURCES_DIST = test/test_astron.h \
 	test/data/script_invalid.json test/data/tx_invalid.json \
 	test/data/tx_valid.json test/data/sighash.json \
 	test/data/alertTests.raw
-#am__objects_28 = test/test_test_astron-test_astron.$(OBJEXT)
-#am__objects_29 = test/test_test_astron-accounting_tests.$(OBJEXT) \
-#	wallet/test/test_test_astron-wallet_tests.$(OBJEXT) \
-#	test/test_test_astron-rpc_wallet_tests.$(OBJEXT)
-#am__objects_30 = test/test_test_astron-zerocoin_implementation_tests.$(OBJEXT) \
-#	test/test_test_astron-zerocoin_denomination_tests.$(OBJEXT) \
-#	test/test_test_astron-zerocoin_transactions_tests.$(OBJEXT) \
-#	test/test_test_astron-zerocoin_coinspend_tests.$(OBJEXT) \
-#	test/test_test_astron-zerocoin_bignum_tests.$(OBJEXT) \
-#	test/test_test_astron-benchmark_zerocoin.$(OBJEXT) \
-#	test/test_test_astron-tutorial_zerocoin.$(OBJEXT) \
-#	test/test_test_astron-libzerocoin_tests.$(OBJEXT) \
-#	test/test_test_astron-addrman_tests.$(OBJEXT) \
-#	test/test_test_astron-allocator_tests.$(OBJEXT) \
-#	test/test_test_astron-base32_tests.$(OBJEXT) \
-#	test/test_test_astron-base58_tests.$(OBJEXT) \
-#	test/test_test_astron-base64_tests.$(OBJEXT) \
-#	test/test_test_astron-budget_tests.$(OBJEXT) \
-#	test/test_test_astron-checkblock_tests.$(OBJEXT) \
-#	test/test_test_astron-Checkpoints_tests.$(OBJEXT) \
-#	test/test_test_astron-coins_tests.$(OBJEXT) \
-#	test/test_test_astron-compress_tests.$(OBJEXT) \
-#	test/test_test_astron-crypto_tests.$(OBJEXT) \
-#	test/test_test_astron-DoS_tests.$(OBJEXT) \
-#	test/test_test_astron-getarg_tests.$(OBJEXT) \
-#	test/test_test_astron-hash_tests.$(OBJEXT) \
-#	test/test_test_astron-key_tests.$(OBJEXT) \
-#	test/test_test_astron-main_tests.$(OBJEXT) \
-#	test/test_test_astron-mempool_tests.$(OBJEXT) \
-#	test/test_test_astron-mruset_tests.$(OBJEXT) \
-#	test/test_test_astron-multisig_tests.$(OBJEXT) \
-#	test/test_test_astron-netbase_tests.$(OBJEXT) \
-#	test/test_test_astron-pmt_tests.$(OBJEXT) \
-#	test/test_test_astron-reverselock_tests.$(OBJEXT) \
-#	test/test_test_astron-rpc_tests.$(OBJEXT) \
-#	test/test_test_astron-sanity_tests.$(OBJEXT) \
-#	test/test_test_astron-scheduler_tests.$(OBJEXT) \
-#	test/test_test_astron-script_P2SH_tests.$(OBJEXT) \
-#	test/test_test_astron-script_tests.$(OBJEXT) \
-#	test/test_test_astron-scriptnum_tests.$(OBJEXT) \
-#	test/test_test_astron-serialize_tests.$(OBJEXT) \
-#	test/test_test_astron-sighash_tests.$(OBJEXT) \
-#	test/test_test_astron-sigopcount_tests.$(OBJEXT) \
-#	test/test_test_astron-skiplist_tests.$(OBJEXT) \
-#	test/test_test_astron-timedata_tests.$(OBJEXT) \
-#	test/test_test_astron-torcontrol_tests.$(OBJEXT) \
-#	test/test_test_astron-transaction_tests.$(OBJEXT) \
-#	test/test_test_astron-uint256_tests.$(OBJEXT) \
-#	test/test_test_astron-univalue_tests.$(OBJEXT) \
-#	test/test_test_astron-util_tests.$(OBJEXT) \
-#	$(am__objects_29)
-#am_test_test_astron_OBJECTS = $(am__objects_28) \
-#	$(am__objects_30) $(am__objects_3) \
-#	$(am__objects_3)
-#am__objects_31 = $(am__objects_3) $(am__objects_3)
-#nodist_test_test_astron_OBJECTS =  \
-#	$(am__objects_31)
+am__objects_28 = test/test_test_astron-test_astron.$(OBJEXT)
+am__objects_29 = test/test_test_astron-accounting_tests.$(OBJEXT) \
+	wallet/test/test_test_astron-wallet_tests.$(OBJEXT) \
+	test/test_test_astron-rpc_wallet_tests.$(OBJEXT)
+am__objects_30 = test/test_test_astron-zerocoin_implementation_tests.$(OBJEXT) \
+	test/test_test_astron-zerocoin_denomination_tests.$(OBJEXT) \
+	test/test_test_astron-zerocoin_transactions_tests.$(OBJEXT) \
+	test/test_test_astron-zerocoin_coinspend_tests.$(OBJEXT) \
+	test/test_test_astron-zerocoin_bignum_tests.$(OBJEXT) \
+	test/test_test_astron-benchmark_zerocoin.$(OBJEXT) \
+	test/test_test_astron-tutorial_zerocoin.$(OBJEXT) \
+	test/test_test_astron-libzerocoin_tests.$(OBJEXT) \
+	test/test_test_astron-addrman_tests.$(OBJEXT) \
+	test/test_test_astron-allocator_tests.$(OBJEXT) \
+	test/test_test_astron-base32_tests.$(OBJEXT) \
+	test/test_test_astron-base58_tests.$(OBJEXT) \
+	test/test_test_astron-base64_tests.$(OBJEXT) \
+	test/test_test_astron-budget_tests.$(OBJEXT) \
+	test/test_test_astron-checkblock_tests.$(OBJEXT) \
+	test/test_test_astron-Checkpoints_tests.$(OBJEXT) \
+	test/test_test_astron-coins_tests.$(OBJEXT) \
+	test/test_test_astron-compress_tests.$(OBJEXT) \
+	test/test_test_astron-crypto_tests.$(OBJEXT) \
+	test/test_test_astron-DoS_tests.$(OBJEXT) \
+	test/test_test_astron-getarg_tests.$(OBJEXT) \
+	test/test_test_astron-hash_tests.$(OBJEXT) \
+	test/test_test_astron-key_tests.$(OBJEXT) \
+	test/test_test_astron-main_tests.$(OBJEXT) \
+	test/test_test_astron-mempool_tests.$(OBJEXT) \
+	test/test_test_astron-mruset_tests.$(OBJEXT) \
+	test/test_test_astron-multisig_tests.$(OBJEXT) \
+	test/test_test_astron-netbase_tests.$(OBJEXT) \
+	test/test_test_astron-pmt_tests.$(OBJEXT) \
+	test/test_test_astron-reverselock_tests.$(OBJEXT) \
+	test/test_test_astron-rpc_tests.$(OBJEXT) \
+	test/test_test_astron-sanity_tests.$(OBJEXT) \
+	test/test_test_astron-scheduler_tests.$(OBJEXT) \
+	test/test_test_astron-script_P2SH_tests.$(OBJEXT) \
+	test/test_test_astron-script_tests.$(OBJEXT) \
+	test/test_test_astron-scriptnum_tests.$(OBJEXT) \
+	test/test_test_astron-serialize_tests.$(OBJEXT) \
+	test/test_test_astron-sighash_tests.$(OBJEXT) \
+	test/test_test_astron-sigopcount_tests.$(OBJEXT) \
+	test/test_test_astron-skiplist_tests.$(OBJEXT) \
+	test/test_test_astron-timedata_tests.$(OBJEXT) \
+	test/test_test_astron-torcontrol_tests.$(OBJEXT) \
+	test/test_test_astron-transaction_tests.$(OBJEXT) \
+	test/test_test_astron-uint256_tests.$(OBJEXT) \
+	test/test_test_astron-univalue_tests.$(OBJEXT) \
+	test/test_test_astron-util_tests.$(OBJEXT) \
+	$(am__objects_29)
+am_test_test_astron_OBJECTS = $(am__objects_28) \
+	$(am__objects_30) $(am__objects_3) \
+	$(am__objects_3)
+am__objects_31 = $(am__objects_3) $(am__objects_3)
+nodist_test_test_astron_OBJECTS =  \
+	$(am__objects_31)
 test_test_astron_OBJECTS = $(am_test_test_astron_OBJECTS) \
 	$(nodist_test_test_astron_OBJECTS)
-#am__DEPENDENCIES_7 =  \
-#	$(am__DEPENDENCIES_1)
-#test_test_astron_DEPENDENCIES =  \
-#	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) \
-#	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-#	$(LIBBITCOIN_CRYPTO) $(am__DEPENDENCIES_2) \
-#	$(LIBBITCOIN_ZEROCOIN) \
-#	$(am__DEPENDENCIES_3) $(LIBLEVELDB_SSE42) \
-#	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) $(LIBSECP256K1) \
-#	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-#	$(am__append_23) $(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-#	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_7)
+am__DEPENDENCIES_7 =  \
+	$(am__DEPENDENCIES_1)
+test_test_astron_DEPENDENCIES =  \
+	$(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CRYPTO) $(am__DEPENDENCIES_2) \
+	$(LIBBITCOIN_ZEROCOIN) \
+	$(am__DEPENDENCIES_3) $(LIBLEVELDB_SSE42) \
+	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(LIBSECP256K1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__append_23) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_7)
 test_test_astron_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(test_test_astron_CXXFLAGS) $(CXXFLAGS) \
@@ -1474,16 +1474,16 @@ am__relativize = \
     dir1=`echo "$$dir1" | sed -e "$$sed_rest"`; \
   done; \
   reldir="$$dir2"
-ACLOCAL = ${SHELL} /tmp/Astron/build-aux/missing aclocal-1.15
+ACLOCAL = ${SHELL} /root/astron_source/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = ar
+AR = /usr/bin/ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /tmp/Astron/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /tmp/Astron/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /tmp/Astron/build-aux/missing automake-1.15
+AUTOCONF = ${SHELL} /root/astron_source/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /root/astron_source/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /root/astron_source/build-aux/missing automake-1.15
 AVX2_CXXFLAGS = -mavx -mavx2
-AWK = gawk
+AWK = mawk
 BDB_CFLAGS = 
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
@@ -1491,20 +1491,20 @@ BITCOIN_CLI_NAME = astron-cli
 BITCOIN_DAEMON_NAME = astrond
 BITCOIN_GUI_NAME = astron-qt
 BITCOIN_TX_NAME = astron-tx
-BOOST_CHRONO_LIB = -lboost_chrono-mt
-BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -pthread -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../include
-BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt
-BOOST_LDFLAGS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../lib
-BOOST_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../lib -lboost_system-mt -lboost_filesystem-mt -lboost_program_options-mt -lboost_thread-mt -lboost_chrono-mt
-BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt
-BOOST_SYSTEM_LIB = -lboost_system-mt
-BOOST_THREAD_LIB = -lboost_thread-mt
-BOOST_UNIT_TEST_FRAMEWORK_LIB = 
+BOOST_CHRONO_LIB = -lboost_chrono
+BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -pthread -I/usr/include
+BOOST_FILESYSTEM_LIB = -lboost_filesystem
+BOOST_LDFLAGS = -L/usr/lib/x86_64-linux-gnu
+BOOST_LIBS = -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono
+BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options
+BOOST_SYSTEM_LIB = -lboost_system
+BOOST_THREAD_LIB = -lboost_thread
+BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework
 BREW = 
-CC = gcc -m64
+CC = gcc
 CCACHE = 
 CCDEPMODE = depmode=gcc3
-CFLAGS = -pipe -O2 
+CFLAGS = -g -O2
 CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 1
@@ -1512,15 +1512,15 @@ CLIENT_VERSION_MINOR = 0
 CLIENT_VERSION_REVISION = 0
 COMPAT_LDFLAGS = 
 COPYRIGHT_YEAR = 2021
-CPP = gcc -m64 -E
+CPP = gcc -E
 CPPFILT = /usr/bin/c++filt
-CPPFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS
-CRYPTO_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include
-CRYPTO_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lcrypto -ldl
-CXX = g++ -m64 -std=c++11
-CXXCPP = g++ -m64 -std=c++11 -E
+CPPFLAGS =  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS
+CRYPTO_CFLAGS = 
+CRYPTO_LIBS = -lcrypto
+CXX = g++ -std=c++11
+CXXCPP = g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -pipe -O2 
+CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEBUG_CPPFLAGS = 
 DEBUG_CXXFLAGS = 
@@ -1535,17 +1535,17 @@ ECHO_N = -n
 ECHO_T = 
 EGREP = /bin/grep -E
 ERROR_CXXFLAGS = 
-EVENT_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include
-EVENT_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -levent
-EVENT_PTHREADS_CFLAGS = -pthread -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include
-EVENT_PTHREADS_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -levent_pthreads -levent
+EVENT_CFLAGS = 
+EVENT_LIBS = -levent
+EVENT_PTHREADS_CFLAGS = -pthread
+EVENT_PTHREADS_LIBS = -levent_pthreads -levent
 EXEEXT = 
 EXTENDED_FUNCTIONAL_TESTS = 
 FGREP = /bin/grep -F
 GCOV = /usr/bin/gcov
 GENHTML = 
 GENISOIMAGE = 
-GIT = /usr/bin/git
+GIT = 
 GPROF_CXXFLAGS = 
 GPROF_LDFLAGS = 
 GREP = /bin/grep
@@ -1564,7 +1564,7 @@ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LCOV = 
 LCOV_OPTS = 
 LD = /usr/bin/ld -m elf_x86_64
-LDFLAGS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../lib 
+LDFLAGS = 
 LEVELDB_CPPFLAGS =  $(am__append_14)
 LEVELDB_TARGET_FLAGS = -DOS_LINUX
 LIBLEVELDB =  $(am__append_12)
@@ -1575,24 +1575,24 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS = 
 LIPO = 
 LN_S = ln -s
-LRELEASE = /home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../native/bin/lrelease
+LRELEASE = /usr/lib/qt5/bin/lrelease
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-LUPDATE = /home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../native/bin/lupdate
+LUPDATE = /usr/lib/qt5/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /tmp/Astron/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /root/astron_source/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
 MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = /bin/mkdir -p
-MOC = /home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../native/bin/moc
+MOC = /usr/lib/qt5/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
-NM = nm
+NM = /usr/bin/nm -B
 NMEDIT = 
-NOWARN_CXXFLAGS = 
+NOWARN_CXXFLAGS =  -Wno-unused-parameter -Wno-implicit-fallthrough
 OBJCOPY = /usr/bin/objcopy
-OBJCXX = g++ -m64 -std=c++11
+OBJCXX = g++ -std=c++11
 OBJCXXDEPMODE = depmode=gcc3
 OBJCXXFLAGS = 
 OBJDUMP = objdump
@@ -1609,58 +1609,58 @@ PACKAGE_VERSION = 1.0.0
 PATH_SEPARATOR = :
 PIC_FLAGS = -fPIC
 PIE_FLAGS = -fPIE
-PKG_CONFIG = /usr/bin/pkg-config --static
+PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = /home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../share/pkgconfig:/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../lib/pkgconfig
+PKG_CONFIG_PATH = 
 PORT = 
-PROTOBUF_CFLAGS = -pthread -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include
-PROTOBUF_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lprotobuf -pthread -lpthread -lz
-PROTOC = /home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../native/bin/protoc
-PTHREAD_CC = gcc -m64
+PROTOBUF_CFLAGS = -pthread
+PROTOBUF_LIBS = -lprotobuf -pthread -lpthread
+PROTOC = /usr/bin/protoc
+PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 PYTHON = /usr/bin/python3.6
-PYTHONPATH = /home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../native/lib/python3/dist-packages:
-QR_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include
-QR_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lqrencode -lpthread
-QT5_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtNetwork -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtWidgets -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtGui -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QT5_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5Network -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lz -lssl -lcrypto -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTACCESSIBILITY_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtAccessibilitySupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtGui -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QTACCESSIBILITY_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5AccessibilitySupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
+PYTHONPATH = 
+QR_CFLAGS = 
+QR_LIBS = -lqrencode
+QT5_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT5_LIBS = -lQt5Network -lQt5Widgets -lQt5Gui -lQt5Core
+QTACCESSIBILITY_CFLAGS = 
+QTACCESSIBILITY_LIBS = 
 QTCGL_CFLAGS = 
 QTCGL_LIBS = 
 QTCLIPBOARD_CFLAGS = 
 QTCLIPBOARD_LIBS = 
-QTDEVICEDISCOVERY_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtDeviceDiscoverySupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QTDEVICEDISCOVERY_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5DeviceDiscoverySupport -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTEVENTDISPATCHER_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtEventDispatcherSupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtGui -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QTEVENTDISPATCHER_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5EventDispatcherSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTFB_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtFbSupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtGui -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QTFB_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5FbSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTFONTDATABASE_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtFontDatabaseSupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtGui -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QTFONTDATABASE_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L//home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5FontDatabaseSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lfontconfig -lfreetype -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
+QTDEVICEDISCOVERY_CFLAGS = 
+QTDEVICEDISCOVERY_LIBS = 
+QTEVENTDISPATCHER_CFLAGS = 
+QTEVENTDISPATCHER_LIBS = 
+QTFB_CFLAGS = 
+QTFB_LIBS = 
+QTFONTDATABASE_CFLAGS = 
+QTFONTDATABASE_LIBS = 
 QTGRAPHICS_CFLAGS = 
 QTGRAPHICS_LIBS = 
 QTPLATFORM_CFLAGS = 
 QTPLATFORM_LIBS = 
-QTTHEME_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtThemeSupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtGui -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QTTHEME_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5ThemeSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5DBus -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QTXCBQPA_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtXcbQpa -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtServiceSupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtThemeSupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtEventDispatcherSupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtFontDatabaseSupport -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtGui -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QTXCBQPA_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L//home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L//home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5XcbQpa -lQt5ServiceSupport -lQt5ThemeSupport -lQt5DBus -lQt5EventDispatcherSupport -lQt5FontDatabaseSupport -lfontconfig -lfreetype -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -lpthread -lX11-xcb -lX11 -lxcb-static -lxcb -ldl -lQt5ServiceSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5ThemeSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5DBus -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -lQt5EventDispatcherSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5FontDatabaseSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lfontconfig -lfreetype -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QT_DBUS_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtDBus -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QT_DBUS_INCLUDES = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtDBus -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QT_DBUS_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5DBus -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QT_INCLUDES = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtNetwork -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtWidgets -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtGui -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
+QTTHEME_CFLAGS = 
+QTTHEME_LIBS = 
+QTXCBQPA_CFLAGS = 
+QTXCBQPA_LIBS = 
+QT_DBUS_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_DBUS_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_DBUS_LIBS = -lQt5DBus -lQt5Core
+QT_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
 QT_LDFLAGS = 
-QT_LIBS = -lqxcb -lxcb-static -lqminimal -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L//home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L//home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5XcbQpa -lQt5ServiceSupport -lQt5ThemeSupport -lQt5DBus -lQt5EventDispatcherSupport -lQt5FontDatabaseSupport -lfontconfig -lfreetype -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -lpthread -lX11-xcb -lX11 -lxcb-static -lxcb -ldl -lQt5ServiceSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5ThemeSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5DBus -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -lQt5EventDispatcherSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5FontDatabaseSupport -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lfontconfig -lfreetype -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lX11-xcb -lX11 -lpthread -lxcb -lXau -lQt5FbSupport -lQt5AccessibilitySupport -lQt5DeviceDiscoverySupport -lQt5ThemeSupport -lQt5EventDispatcherSupport -lQt5FontDatabaseSupport -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5Network -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lz -lssl -lcrypto -lQt5Widgets -lQt5Gui -lqtlibpng -lqtharfbuzz -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Gui -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lqtlibpng -lqtharfbuzz -lz -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../plugins/platforms
-QT_PIE_FLAGS = -fPIE
+QT_LIBS = -lQt5Network -lQt5Widgets -lQt5Gui -lQt5Core
+QT_PIE_FLAGS = -fPIC
 QT_SELECT = qt5
-QT_TEST_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtTest -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QT_TEST_INCLUDES = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtTest -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/QtCore
-QT_TEST_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lQt5Test -lQt5Core -lm -lz -lqtpcre2 -ldl -lpthread -lQt5Core -lpthread -lm -lz -lqtpcre2 -ldl
-QT_TRANSLATION_DIR = /home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../translations
-RANLIB = ranlib
-RCC = /home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../native/bin/rcc
+QT_TEST_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_TEST_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_TEST_LIBS = -lQt5Test -lQt5Core
+QT_TRANSLATION_DIR = 
+RANLIB = /usr/bin/ranlib
+RCC = /usr/lib/qt5/bin/rcc
 READELF = /usr/bin/readelf
 RELDFLAGS = 
 RSVG_CONVERT = 
@@ -1672,12 +1672,12 @@ SHANI_CXXFLAGS = -msse4 -msha
 SHELL = /bin/bash
 SSE41_CXXFLAGS = -msse4.1
 SSE42_CXXFLAGS = -msse4.2
-SSL_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include
-SSL_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lssl -lcrypto -ldl
+SSL_CFLAGS = 
+SSL_LIBS = -lssl
 STRIP = /usr/bin/strip
-TESTDEFS = 
+TESTDEFS =  -DBOOST_TEST_DYN_LINK
 TIFFCP = 
-UIC = /home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/share/../native/bin/uic
+UIC = /usr/lib/qt5/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_NUM_GMP = 
@@ -1685,21 +1685,21 @@ USE_NUM_OPENSSL =
 USE_QRCODE = 
 USE_UPNP = 
 VERSION = 1.0.0
-WARN_CXXFLAGS = 
+WARN_CXXFLAGS =  -Wall -Wextra -Wformat -Wvla -Wformat-security -Wredundant-decls
 WINDOWS_BITS = 
 WINDRES = 
-X11XCB_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include/xcb-shared -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include
-X11XCB_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lX11-xcb -lX11 -lpthread -lxcb -lXau
+X11XCB_CFLAGS = 
+X11XCB_LIBS = 
 XGETTEXT = 
-ZMQ_CFLAGS = -I/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/include
-ZMQ_LIBS = -L/home/administrator/walletbuilders/build_environment/pivx/3.3.0/depends/x86_64-w64-linux/lib -lzmq -lpthread -lrt
-abs_builddir = /tmp/Astron/src
-abs_srcdir = /tmp/Astron/src
-abs_top_builddir = /tmp/Astron
-abs_top_srcdir = /tmp/Astron
-ac_ct_AR = 
-ac_ct_CC = 
-ac_ct_CXX = 
+ZMQ_CFLAGS = 
+ZMQ_LIBS = -lzmq
+abs_builddir = /root/astron_source/src
+abs_srcdir = /root/astron_source/src
+abs_top_builddir = /root/astron_source
+abs_top_srcdir = /root/astron_source
+ac_ct_AR = ar
+ac_ct_CC = gcc
+ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
 ac_ct_OBJCXX = 
 am__include = include
@@ -1720,15 +1720,15 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-w64-linux-gnu
-host_alias = x86_64-w64-linux
+host = x86_64-pc-linux-gnu
+host_alias = 
 host_cpu = x86_64
 host_os = linux-gnu
-host_vendor = w64
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /tmp/Astron/build-aux/install-sh
+install_sh = ${SHELL} /root/astron_source/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -2283,86 +2283,86 @@ leveldb_libleveldb_sse42_a_CXXFLAGS =  \
 	$(leveldb_libleveldb_a_CXXFLAGS) \
 	$(am__append_20)
 leveldb_libleveldb_sse42_a_SOURCES = leveldb/port/port_posix_sse.cc
-#TEST_SRCDIR = test
-#TEST_BINARY = test/test_astron$(EXEEXT)
-#JSON_TEST_FILES = \
-#  test/data/script_valid.json \
-#  test/data/base58_keys_valid.json \
-#  test/data/sig_canonical.json \
-#  test/data/sig_noncanonical.json \
-#  test/data/base58_encode_decode.json \
-#  test/data/base58_keys_invalid.json \
-#  test/data/script_invalid.json \
-#  test/data/tx_invalid.json \
-#  test/data/tx_valid.json \
-#  test/data/sighash.json
+TEST_SRCDIR = test
+TEST_BINARY = test/test_astron$(EXEEXT)
+JSON_TEST_FILES = \
+  test/data/script_valid.json \
+  test/data/base58_keys_valid.json \
+  test/data/sig_canonical.json \
+  test/data/sig_noncanonical.json \
+  test/data/base58_encode_decode.json \
+  test/data/base58_keys_invalid.json \
+  test/data/script_invalid.json \
+  test/data/tx_invalid.json \
+  test/data/tx_valid.json \
+  test/data/sighash.json
 
-#RAW_TEST_FILES = test/data/alertTests.raw
-#GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
-#BITCOIN_TEST_SUITE = \
-#  test/test_astron.h \
-#  test/test_astron.cpp
+RAW_TEST_FILES = test/data/alertTests.raw
+GENERATED_TEST_FILES = $(JSON_TEST_FILES:.json=.json.h) $(RAW_TEST_FILES:.raw=.raw.h)
+BITCOIN_TEST_SUITE = \
+  test/test_astron.h \
+  test/test_astron.cpp
 
 # test_astron binary #
-#BITCOIN_TESTS =  \
-#	test/zerocoin_implementation_tests.cpp \
-#	test/zerocoin_denomination_tests.cpp \
-#	test/zerocoin_transactions_tests.cpp \
-#	test/zerocoin_coinspend_tests.cpp \
-#	test/zerocoin_bignum_tests.cpp \
-#	test/benchmark_zerocoin.cpp \
-#	test/tutorial_zerocoin.cpp \
-#	test/libzerocoin_tests.cpp \
-#	test/addrman_tests.cpp \
-#	test/allocator_tests.cpp \
-#	test/base32_tests.cpp test/base58_tests.cpp \
-#	test/base64_tests.cpp test/budget_tests.cpp \
-#	test/checkblock_tests.cpp \
-#	test/Checkpoints_tests.cpp \
-#	test/coins_tests.cpp \
-#	test/compress_tests.cpp \
-#	test/crypto_tests.cpp test/DoS_tests.cpp \
-#	test/getarg_tests.cpp test/hash_tests.cpp \
-#	test/key_tests.cpp test/main_tests.cpp \
-#	test/mempool_tests.cpp \
-#	test/mruset_tests.cpp \
-#	test/multisig_tests.cpp \
-#	test/netbase_tests.cpp test/pmt_tests.cpp \
-#	test/reverselock_tests.cpp \
-#	test/rpc_tests.cpp test/sanity_tests.cpp \
-#	test/scheduler_tests.cpp \
-#	test/script_P2SH_tests.cpp \
-#	test/script_tests.cpp \
-#	test/scriptnum_tests.cpp \
-#	test/serialize_tests.cpp \
-#	test/sighash_tests.cpp \
-#	test/sigopcount_tests.cpp \
-#	test/skiplist_tests.cpp \
-#	test/timedata_tests.cpp \
-#	test/torcontrol_tests.cpp \
-#	test/transaction_tests.cpp \
-#	test/uint256_tests.cpp \
-#	test/univalue_tests.cpp test/util_tests.cpp \
-#	$(am__append_22)
-#test_test_astron_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-#test_test_astron_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_FLAGS)
-#test_test_astron_LDADD = $(LIBBITCOIN_SERVER) \
-#	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
-#	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
-#	$(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) \
-#	$(LIBLEVELDB) $(LIBLEVELDB_SSE42) \
-#	$(LIBMEMENV) $(BOOST_LIBS) \
-#	$(BOOST_UNIT_TEST_FRAMEWORK_LIB) \
-#	$(LIBSECP256K1) $(EVENT_LIBS) \
-#	$(EVENT_PTHREADS_LIBS) $(am__append_23) \
-#	$(LIBBITCOIN_CONSENSUS) $(BDB_LIBS) \
-#	$(SSL_LIBS) $(CRYPTO_LIBS) \
-#	$(MINIUPNPC_LIBS) $(am__append_24)
-#test_test_astron_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-#test_test_astron_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
+BITCOIN_TESTS =  \
+	test/zerocoin_implementation_tests.cpp \
+	test/zerocoin_denomination_tests.cpp \
+	test/zerocoin_transactions_tests.cpp \
+	test/zerocoin_coinspend_tests.cpp \
+	test/zerocoin_bignum_tests.cpp \
+	test/benchmark_zerocoin.cpp \
+	test/tutorial_zerocoin.cpp \
+	test/libzerocoin_tests.cpp \
+	test/addrman_tests.cpp \
+	test/allocator_tests.cpp \
+	test/base32_tests.cpp test/base58_tests.cpp \
+	test/base64_tests.cpp test/budget_tests.cpp \
+	test/checkblock_tests.cpp \
+	test/Checkpoints_tests.cpp \
+	test/coins_tests.cpp \
+	test/compress_tests.cpp \
+	test/crypto_tests.cpp test/DoS_tests.cpp \
+	test/getarg_tests.cpp test/hash_tests.cpp \
+	test/key_tests.cpp test/main_tests.cpp \
+	test/mempool_tests.cpp \
+	test/mruset_tests.cpp \
+	test/multisig_tests.cpp \
+	test/netbase_tests.cpp test/pmt_tests.cpp \
+	test/reverselock_tests.cpp \
+	test/rpc_tests.cpp test/sanity_tests.cpp \
+	test/scheduler_tests.cpp \
+	test/script_P2SH_tests.cpp \
+	test/script_tests.cpp \
+	test/scriptnum_tests.cpp \
+	test/serialize_tests.cpp \
+	test/sighash_tests.cpp \
+	test/sigopcount_tests.cpp \
+	test/skiplist_tests.cpp \
+	test/timedata_tests.cpp \
+	test/torcontrol_tests.cpp \
+	test/transaction_tests.cpp \
+	test/uint256_tests.cpp \
+	test/univalue_tests.cpp test/util_tests.cpp \
+	$(am__append_22)
+test_test_astron_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
+test_test_astron_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_FLAGS)
+test_test_astron_LDADD = $(LIBBITCOIN_SERVER) \
+	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
+	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) \
+	$(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) \
+	$(LIBLEVELDB) $(LIBLEVELDB_SSE42) \
+	$(LIBMEMENV) $(BOOST_LIBS) \
+	$(BOOST_UNIT_TEST_FRAMEWORK_LIB) \
+	$(LIBSECP256K1) $(EVENT_LIBS) \
+	$(EVENT_PTHREADS_LIBS) $(am__append_23) \
+	$(LIBBITCOIN_CONSENSUS) $(BDB_LIBS) \
+	$(SSL_LIBS) $(CRYPTO_LIBS) \
+	$(MINIUPNPC_LIBS) $(am__append_24)
+test_test_astron_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+test_test_astron_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
 #
-#nodist_test_test_astron_SOURCES = $(GENERATED_TEST_FILES)
-#CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
+nodist_test_test_astron_SOURCES = $(GENERATED_TEST_FILES)
+CLEAN_BITCOIN_TEST = test/*.gcda test/*.gcno $(GENERATED_TEST_FILES)
 
 # astron qt core #
 QT_TS = \
@@ -2759,37 +2759,37 @@ qt_astron_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
 #locale/foo.ts -> locale/foo.qm
 QT_QM = $(QT_TS:.ts=.qm)
 CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_astron_locale.qrc
-#TEST_QT_MOC_CPP = qt/test/moc_uritests.cpp \
-#	$(am__append_37)
-#TEST_QT_H = \
-#  qt/test/uritests.h \
-#  qt/test/paymentrequestdata.h \
-#  qt/test/paymentservertests.h
+TEST_QT_MOC_CPP = qt/test/moc_uritests.cpp \
+	$(am__append_37)
+TEST_QT_H = \
+  qt/test/uritests.h \
+  qt/test/paymentrequestdata.h \
+  qt/test/paymentservertests.h
 
-#qt_test_test_astron_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
-#  $(QT_INCLUDES) $(QT_TEST_INCLUDES) $(PROTOBUF_CFLAGS)
+qt_test_test_astron_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_TEST_INCLUDES) $(PROTOBUF_CFLAGS)
 
-#qt_test_test_astron_qt_SOURCES =  \
-#	qt/test/test_main.cpp \
-#	qt/test/uritests.cpp $(TEST_QT_H) \
-#	$(am__append_38)
-#nodist_qt_test_test_astron_qt_SOURCES = $(TEST_QT_MOC_CPP)
-#qt_test_test_astron_qt_LDADD = $(LIBBITCOINQT) \
-#	$(LIBBITCOIN_SERVER) $(am__append_39) \
-#	$(am__append_40) $(LIBBITCOIN_CLI) \
-#	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
-#	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
-#	$(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) \
-#	$(LIBLEVELDB_SSE42) $(LIBMEMENV) \
-#	$(BOOST_LIBS) $(QT_DBUS_LIBS) \
-#	$(QT_TEST_LIBS) $(QT_LIBS) $(QR_LIBS) \
-#	$(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) \
-#	$(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
-#	$(LIBSECP256K1) $(EVENT_PTHREADS_LIBS) \
-#	$(EVENT_LIBS)
-#qt_test_test_astron_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-#qt_test_test_astron_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-#CLEAN_BITCOIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
+qt_test_test_astron_qt_SOURCES =  \
+	qt/test/test_main.cpp \
+	qt/test/uritests.cpp $(TEST_QT_H) \
+	$(am__append_38)
+nodist_qt_test_test_astron_qt_SOURCES = $(TEST_QT_MOC_CPP)
+qt_test_test_astron_qt_LDADD = $(LIBBITCOINQT) \
+	$(LIBBITCOIN_SERVER) $(am__append_39) \
+	$(am__append_40) $(LIBBITCOIN_CLI) \
+	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
+	$(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) \
+	$(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) \
+	$(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+	$(BOOST_LIBS) $(QT_DBUS_LIBS) \
+	$(QT_TEST_LIBS) $(QT_LIBS) $(QR_LIBS) \
+	$(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) \
+	$(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
+	$(LIBSECP256K1) $(EVENT_PTHREADS_LIBS) \
+	$(EVENT_LIBS)
+qt_test_test_astron_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_test_test_astron_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+CLEAN_BITCOIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
 all: all-recursive
 
 .SUFFIXES:
@@ -9774,7 +9774,7 @@ distdir: $(DISTFILES)
 	      || exit 1; \
 	  fi; \
 	done
-check-local:
+#check-local:
 check-am: all-am
 	$(MAKE) $(AM_MAKEFLAGS) check-TESTS check-local
 check: check-recursive
@@ -10001,45 +10001,45 @@ check-security: $(bin_PROGRAMS)
 	@test -f $(PROTOC)
 	$(AM_V_GEN) $(PROTOC) --cpp_out=$(@D) --proto_path=$(<D) $<
 
-#$(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
+$(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
 
-#astron_test: $(TEST_BINARY)
+astron_test: $(TEST_BINARY)
 
-#astron_test_check: $(TEST_BINARY) FORCE
-#	$(MAKE) check-TESTS TESTS=$^
+astron_test_check: $(TEST_BINARY) FORCE
+	$(MAKE) check-TESTS TESTS=$^
 
-#astron_test_clean : FORCE
-#	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_astron_OBJECTS) $(TEST_BINARY)
+astron_test_clean : FORCE
+	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_astron_OBJECTS) $(TEST_BINARY)
 
-#check-local: $(BITCOIN_TESTS:.cpp=.cpp.test)
-#	@echo "Running test/util/bitcoin-util-test.py..."
-#	$(PYTHON) $(top_builddir)/test/util/bitcoin-util-test.py
-#	@echo "Running test/util/rpcauth-test.py..."
-#	$(PYTHON) $(top_builddir)/test/util/rpcauth-test.py
-#	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C secp256k1 check
-#	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C univalue check
+check-local: $(BITCOIN_TESTS:.cpp=.cpp.test)
+	@echo "Running test/util/bitcoin-util-test.py..."
+	$(PYTHON) $(top_builddir)/test/util/bitcoin-util-test.py
+	@echo "Running test/util/rpcauth-test.py..."
+	$(PYTHON) $(top_builddir)/test/util/rpcauth-test.py
+	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C secp256k1 check
+	$(AM_V_at)$(MAKE) $(AM_MAKEFLAGS) -C univalue check
 
-#%.cpp.test: %.cpp
-#	@echo Running tests: `cat $< | grep -E "(BOOST_FIXTURE_TEST_SUITE\\(|BOOST_AUTO_TEST_SUITE\\()" | cut -d '(' -f 2 | cut -d ',' -f 1 | cut -d ')' -f 1` from $<
-#	$(AM_V_at)$(TEST_BINARY) -l test_suite -t "`cat $< | grep -E "(BOOST_FIXTURE_TEST_SUITE\\(|BOOST_AUTO_TEST_SUITE\\()" | cut -d '(' -f 2 | cut -d ',' -f 1 | cut -d ')' -f 1`" > $<.log 2>&1 || (cat $<.log && false)
+%.cpp.test: %.cpp
+	@echo Running tests: `cat $< | grep -E "(BOOST_FIXTURE_TEST_SUITE\\(|BOOST_AUTO_TEST_SUITE\\()" | cut -d '(' -f 2 | cut -d ',' -f 1 | cut -d ')' -f 1` from $<
+	$(AM_V_at)$(TEST_BINARY) -l test_suite -t "`cat $< | grep -E "(BOOST_FIXTURE_TEST_SUITE\\(|BOOST_AUTO_TEST_SUITE\\()" | cut -d '(' -f 2 | cut -d ',' -f 1 | cut -d ')' -f 1`" > $<.log 2>&1 || (cat $<.log && false)
 
-#%.json.h: %.json
-#	@$(MKDIR_P) $(@D)
-#	@{ \
-#	 echo "namespace json_tests{" && \
-#	 echo "static unsigned const char $(*F)[] = {" && \
-#	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
-#	 echo "};};"; \
-#	} > "$@.new" && mv -f "$@.new" "$@"
-#	@echo "Generated $@"
+%.json.h: %.json
+	@$(MKDIR_P) $(@D)
+	@{ \
+	 echo "namespace json_tests{" && \
+	 echo "static unsigned const char $(*F)[] = {" && \
+	 $(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' && \
+	 echo "};};"; \
+	} > "$@.new" && mv -f "$@.new" "$@"
+	@echo "Generated $@"
 
-#%.raw.h: %.raw
-#	@$(MKDIR_P) $(@D)
-#	@echo "namespace alert_tests{" > $@
-#	@echo "static unsigned const char $(*F)[] = {" >> $@
-#	@$(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' >> $@
-#	@echo "};};" >> $@
-#	@echo "Generated $@"
+%.raw.h: %.raw
+	@$(MKDIR_P) $(@D)
+	@echo "namespace alert_tests{" > $@
+	@echo "static unsigned const char $(*F)[] = {" >> $@
+	@$(HEXDUMP) -v -e '8/1 "0x%02x, "' -e '"\n"' $< | $(SED) -e 's/0x  ,//g' >> $@
+	@echo "};};" >> $@
+	@echo "Generated $@"
 
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
@@ -10096,13 +10096,13 @@ moc_%.cpp: %.h
 	@$(MKDIR_P) $(@D)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@
 
-#test_astron_qt : qt/test/test_astron-qt$(EXEEXT)
+test_astron_qt : qt/test/test_astron-qt$(EXEEXT)
 
-#test_astron_qt_check : qt/test/test_astron-qt$(EXEEXT) FORCE
-#	$(MAKE) check-TESTS TESTS=$^
+test_astron_qt_check : qt/test/test_astron-qt$(EXEEXT) FORCE
+	$(MAKE) check-TESTS TESTS=$^
 
-#test_astron_qt_clean: FORCE
-#	rm -f $(CLEAN_BITCOIN_QT_TEST) $(qt_test_test_astron_qt_OBJECTS)
+test_astron_qt_clean: FORCE
+	rm -f $(CLEAN_BITCOIN_QT_TEST) $(qt_test_test_astron_qt_OBJECTS)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
