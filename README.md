@@ -1,5 +1,5 @@
 # Astron-Core
-# Version: 1.0.0.0
+# Version: 1.0.0.1
 Official Astron Core Cryptocurrency Repository.
 
 # Contact:
